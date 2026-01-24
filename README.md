@@ -16,22 +16,25 @@ Software:
 - Python 3.10+
 
 Verify GPU passthrough:
-nvidia-smi
+`nvidia-smi`
 
 ## Setup
 
 Create and activate a virtual environment:
+```
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
 Install PyTorch with CUDA:
-pip install torch --index-url https://download.pytorch.org/whl/cu121
+`pip install torch --index-url https://download.pytorch.org/whl/cu121`
 
 Install project dependencies:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ## Project Structure
 
+```
 llm-lab/
   data/
     alpaca_tiny.json
@@ -45,37 +48,40 @@ llm-lab/
   Makefile
   requirements.txt
   README.md
+```
 
 ## Train the Model
 
-make train
+`make train`
 
 ## Run Inference
 
-make infer
+`make infer`
 
 Run inference with sampling parameters:
-make infer-sample temp=0.7 top_p=0.9 max=200
+`make infer-sample temp=0.7 top_p=0.9 max=200`
 
 ## GPU Memory Profiling
 
-make profile
+`make profile`
 
 ## Merge LoRA Into a Standalone Model
 
-make merge
+`make merge`
 
 ## Export to GGUF (llama.cpp / ollama)
 
-make gguf
+`make gguf`
 
 ## Troubleshooting
 
 Check CUDA:
+```
 python3 - << 'EOF'
 import torch
 print(torch.cuda.is_available())
 EOF
+```
 
 Reduce memory usage by lowering:
 - per_device_train_batch_size
