@@ -47,8 +47,8 @@ model = PeftModel.from_pretrained(model, adapter_path)
 # ------------------------------------------------------------
 # 5. Build a test prompt
 # ------------------------------------------------------------
-# You can change this to anything you want to test.
-prompt = "Explain what an MCP agent is in simple terms."
+user_question = "Explain what an MCP agent is in simple terms."
+prompt = f"User: {user_question}\nAssistant:"
 
 
 # ------------------------------------------------------------
@@ -64,12 +64,16 @@ inputs = tokenizer(
 # 7. Generate a response
 # ------------------------------------------------------------
 # max_new_tokens controls how long the answer can be.
+stop_id = tokenizer.encode("User:", add_special_tokens=False)[0]
+
 output = model.generate(
     **inputs,
     max_new_tokens=200,
-    do_sample=True,        # Enable sampling for more natural responses
-    temperature=0.7         # Controls creativity
+    do_sample=True,
+    temperature=0.7,
+    eos_token_id=stop_id,
 )
+decoded = tokenizer.decode(output[0], skip_special_tokens=True)
 
 
 # ------------------------------------------------------------
@@ -77,4 +81,6 @@ output = model.generate(
 # ------------------------------------------------------------
 print("\n=== Model Response ===\n")
 print(tokenizer.decode(output[0], skip_special_tokens=True))
+clean = decoded.split("User:")[0]
+print(clean)
 print("\n=======================\n")

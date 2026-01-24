@@ -1,2 +1,5 @@
 /.venv/
 /.idea/
+/models/tinyllama-merged.gguf
+/models/tinyllama-lora/
+/models/tinyllama-merged/

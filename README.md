@@ -1,96 +1,225 @@
-# Local LLM Fine‑Tuning (TinyLlama + LoRA)
+# LLM Lab — TinyLlama LoRA Fine‑Tuning Pipeline
 
-This project fine‑tunes a small LLM (TinyLlama‑1.1B) locally using LoRA on a single NVIDIA GPU inside WSL2. It includes training, inference, GPU profiling, LoRA merging, and GGUF export for llama.cpp / ollama.
+A clean, local, and reproducible pipeline for fine‑tuning **TinyLlama** using **LoRA**, testing the adapted model, merging weights, and exporting to **GGUF** for use with llama.cpp and other local runtimes.
 
-## Requirements
+This repository is designed to be small, understandable, and easy to extend.
 
-Hardware:
-- NVIDIA GPU (RTX 3060 12GB recommended)
-- 16–32GB RAM
-- 10–20GB free disk space
+---
 
-Software:
-- Windows 10/11 with WSL2
-- Debian or Ubuntu inside WSL2
-- Latest NVIDIA GPU driver on Windows
-- Python 3.10+
+## 🚀 Features
 
-Verify GPU passthrough:
-`nvidia-smi`
+- Fine‑tune **TinyLlama/TinyLlama-1.1B-Chat-v1.0** with **LoRA**
+- Uses Hugging Face `transformers`, `datasets`, `peft`, and `accelerate`
+- Simple Alpaca‑style JSON dataset included for quick experiments
+- Inference script to test the fine‑tuned model
+- Merge LoRA adapters into a standalone model
+- Export merged model to **GGUF** for llama.cpp and similar tools
+- Makefile‑driven workflow for consistent, one‑command operations
 
-## Setup
+---
 
-Create and activate a virtual environment:
+## 📦 Requirements
+
+- Python 3.10+ (3.12 tested)
+- A CUDA‑capable GPU (e.g., RTX 3060 or better)
+- `python3-venv`
+- CMake 3.14+ (for llama.cpp)
+
+Dependencies are listed in `requirements.txt`.
+
+---
+
+## 🛠️ Installation
+
+### Option 1: Using the Makefile
+```bash
+make install
 ```
-python3 -m venv .venv
+
+This will:
+
+-   Create `.venv/`
+-   Upgrade `pip`
+-   Install PyTorch (CUDA build)
+-   Install all dependencies
+
+Activate manually if needed:
+```bash
 source .venv/bin/activate
 ```
 
-Install PyTorch with CUDA:
-`pip install torch --index-url https://download.pytorch.org/whl/cu121`
+### Option 2: Manual installation
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
 
-Install project dependencies:
-`pip install -r requirements.txt`
-
-## Project Structure
-
-```
-llm-lab/
-  data/
-    alpaca_tiny.json
-  models/
-    tinyllama-lora/
-    tinyllama-merged/
-  train.py
-  infer.py
-  merge_lora.py
-  export_gguf.py
-  Makefile
-  requirements.txt
-  README.md
+python3 -m pip install --upgrade pip
+python3 -m pip install torch --index-url https://download.pytorch.org/whl/cu121
+python3 -m pip install -r requirements.txt
 ```
 
-## Train the Model
+### Installing llama.cpp (for GGUF conversion)
+```bash
+# Clone llama.cpp (once, outside this repo)
+cd /mnt/c/Users/Michael/PycharmProjects
+git clone https://github.com/ggerganov/llama.cpp
+cd llama.cpp
 
-`make train`
+# Build with CMake
+cmake -B build
+cmake --build build --config Release -j$(nproc)
 
-## Run Inference
-
-`make infer`
-
-Run inference with sampling parameters:
-`make infer-sample temp=0.7 top_p=0.9 max=200`
-
-## GPU Memory Profiling
-
-`make profile`
-
-## Merge LoRA Into a Standalone Model
-
-`make merge`
-
-## Export to GGUF (llama.cpp / ollama)
-
-`make gguf`
-
-## Troubleshooting
-
-Check CUDA:
-```
-python3 - << 'EOF'
-import torch
-print(torch.cuda.is_available())
-EOF
+# Install Python dependencies in your llm_lab venv
+cd /mnt/c/Users/Michael/PycharmProjects/llm_lab
+source .venv/bin/activate
+pip install transformers sentencepiece protobuf gguf
 ```
 
-Reduce memory usage by lowering:
-- per_device_train_batch_size
-- max_length
-- max_steps
+---
 
-## Next Steps
+## 📁 Project Structure
+```
+llm_lab/
+│
+├── train.py              # Fine‑tune TinyLlama with LoRA
+├── infer.py              # Run inference with the fine‑tuned model
+├── merge_lora.py         # Merge LoRA adapter into the base model
+├── export_gguf.py        # Convert merged model to GGUF
+│
+├── data/
+│   └── alpaca_tiny.json  # Small Alpaca‑style dataset for testing
+│
+├── models/               # Output directory (created automatically)
+│   ├── tinyllama-lora/   # LoRA adapter weights
+│   ├── tinyllama-merged/ # Merged full model
+│   └── *.gguf            # Exported GGUF models
+│
+├── Makefile              # Workflow automation
+├── requirements.txt      # Python dependencies
+└── README.md             # Project documentation
+```
 
-Once TinyLlama works, scale to:
-- Phi‑2 (2.7B)
-- Qwen‑1.5B
-- Mistral‑7B (QLoRA)
+---
+
+## 📄 File‑by‑File Explanation
+
+### `train.py`
+
+-   Loads TinyLlama base model
+-   Loads tokenizer and dataset
+-   Builds causal training sequences
+-   Applies LoRA adapters
+-   Runs Hugging Face `Trainer`
+-   Saves LoRA weights to `models/tinyllama-lora/`
+
+### `infer.py`
+
+-   Loads base model + LoRA adapter
+-   Builds a prompt using the training format:
+```
+    User: <instruction>
+    Assistant:
+```
+
+-   Generates a single clean answer
+-   Prints the output
+
+### `merge_lora.py`
+
+-   Loads base model + LoRA adapter
+-   Merges LoRA weights into a standalone model
+-   Saves to `models/tinyllama-merged/`
+
+### `export_gguf.py`
+
+-   Uses llama.cpp's `convert_hf_to_gguf.py` script
+-   Converts merged model to GGUF format
+-   Saves `.gguf` files into `models/`
+
+### `data/alpaca_tiny.json`
+
+-   Small Alpaca‑style dataset
+-   Contains `instruction` and `output` fields
+-   Used for quick fine‑tuning tests
+
+### `Makefile`
+
+Provides shortcuts:
+
+-   `make install` --- install dependencies
+-   `make train` --- run LoRA training
+-   `make infer` --- run inference
+-   `make merge` --- merge LoRA weights
+-   `make gguf` --- export GGUF
+-   `make clean` --- remove generated model files
+
+---
+
+## ▶️ Usage
+
+### Train the model
+```bash
+make train
+```
+
+### Run inference
+```bash
+make infer
+```
+
+### Merge LoRA into the base model
+```bash
+make merge
+```
+
+### Export GGUF
+```bash
+make gguf
+```
+
+---
+
+## ⚙️ Configuration Notes
+
+You can modify:
+
+-   Model name
+-   Dataset path
+-   LoRA hyperparameters
+-   TrainingArguments
+
+Inside `train.py`.
+
+---
+
+## 🧩 Troubleshooting
+
+### Model generates multi‑turn conversations
+
+Use the training prompt format:
+```
+User: <instruction>
+Assistant:
+```
+
+Strip extra turns:
+```python
+clean = decoded.split("User:")[0]
+```
+
+### Makefile errors
+
+If you see:
+```
+missing separator
+```
+
+Your Makefile uses **spaces instead of tabs**.
+
+### CUDA / VRAM issues
+
+Lower:
+
+-   Batch size
+-   Sequence length
+-   LoRA rank
