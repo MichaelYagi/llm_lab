@@ -1,0 +1,102 @@
+[
+  {
+    "instruction": "Explain what an API is in simple terms.",
+    "output": "An API is a set of rules that lets two software systems talk to each other."
+  },
+  {
+    "instruction": "Write a short motivational message for someone learning to code.",
+    "output": "Every bug you fix is proof that you're getting stronger. Keep going."
+  },
+  {
+    "instruction": "Summarize the purpose of unit tests.",
+    "output": "Unit tests verify that small pieces of code behave correctly and help prevent regressions."
+  },
+  {
+    "instruction": "Give an example of a strong password.",
+    "output": "A strong password mixes letters, numbers, and symbols, like: R8m!cA2#pQ."
+  },
+  {
+    "instruction": "Explain the difference between RAM and storage.",
+    "output": "RAM is short‑term memory used while programs run. Storage is long‑term memory where files are kept."
+  },
+  {
+    "instruction": "Provide three tips for staying focused while working.",
+    "output": "Remove distractions, break tasks into small steps, and take short scheduled breaks."
+  },
+  {
+    "instruction": "Describe what a neural network does.",
+    "output": "A neural network learns patterns from data and uses them to make predictions or generate outputs."
+  },
+  {
+    "instruction": "Rewrite this sentence to be more formal: 'I gotta finish this thing fast.'",
+    "output": "I need to complete this task quickly."
+  },
+  {
+    "instruction": "List three common HTTP methods and what they do.",
+    "output": "GET retrieves data, POST sends new data, and PUT updates existing data."
+  },
+  {
+    "instruction": "Explain why version control is useful.",
+    "output": "Version control tracks changes to code, makes collaboration easier, and allows safe rollbacks."
+  },
+  {
+    "instruction": "Give a simple definition of machine learning.",
+    "output": "Machine learning is a way for computers to learn patterns from data instead of being explicitly programmed."
+  },
+  {
+    "instruction": "Provide a polite way to decline a meeting invitation.",
+    "output": "Thank you for the invitation. I’m unable to attend, but I appreciate being included."
+  },
+  {
+    "instruction": "Explain what a database index is.",
+    "output": "A database index speeds up searches by keeping a quick‑lookup structure for specific columns."
+  },
+  {
+    "instruction": "Give an example of a JSON object.",
+    "output": "{\"name\": \"Alex\", \"age\": 29, \"city\": \"Toronto\"}"
+  },
+  {
+    "instruction": "Describe the purpose of a firewall.",
+    "output": "A firewall filters network traffic to block unauthorized access and protect systems."
+  },
+  {
+    "instruction": "Explain what latency means in networking.",
+    "output": "Latency is the time it takes for data to travel from one point to another."
+  },
+  {
+    "instruction": "Give advice to someone preparing for a job interview.",
+    "output": "Research the company, practice common questions, and prepare examples of your past work."
+  },
+  {
+    "instruction": "Write a short compliment for a coworker.",
+    "output": "Your attention to detail makes the whole team stronger."
+  },
+  {
+    "instruction": "Explain what open‑source software is.",
+    "output": "Open‑source software is code that anyone can view, modify, and share."
+  },
+  {
+    "instruction": "Describe the purpose of logging in software.",
+    "output": "Logging records important events so developers can debug issues and understand system behavior."
+  },
+  {
+    "instruction": "Give a simple explanation of recursion.",
+    "output": "Recursion is when a function solves a problem by calling itself with a smaller input."
+  },
+  {
+    "instruction": "Provide a short greeting message for a chatbot.",
+    "output": "Hello! How can I help you today?"
+  },
+  {
+    "instruction": "Explain what a GPU is used for.",
+    "output": "A GPU performs many calculations in parallel, making it ideal for graphics and machine learning."
+  },
+  {
+    "instruction": "Give an example of a polite customer support response.",
+    "output": "Thanks for reaching out. I’m happy to help you resolve this issue."
+  },
+  {
+    "instruction": "Describe the purpose of a README file.",
+    "output": "A README explains what a project does, how to install it, and how to use it."
+  }
+]
