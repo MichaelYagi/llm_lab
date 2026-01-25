@@ -43,7 +43,7 @@ install: $(VENV)/bin/activate
 # ------------------------------------------------------------
 # Run LoRA training
 # ------------------------------------------------------------
-# Executes train.py using the venv Python interpreter.
+# Executes train.py using the venv Python interpreter with data from alpaca_tiny.json.
 # Produces LoRA adapter weights in models/tinyllama-lora/
 train:
 	$(PYTHON) train.py
