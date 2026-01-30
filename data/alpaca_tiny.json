@@ -710,5 +710,497 @@
     {
         "instruction": "What is a design pattern?",
         "output": "A design pattern is a reusable solution to commonly occurring software design problems."
+    },
+    {
+        "instruction": "How do you debug a null pointer exception?",
+        "output": "Check where the variable is null, trace back to see why it wasn't initialized, and add null checks or ensure proper initialization."
+    },
+    {
+        "instruction": "Explain what Big O notation means.",
+        "output": "Big O notation describes how an algorithm's time or space requirements grow as input size increases."
+    },
+    {
+        "instruction": "What is the difference between == and === in JavaScript?",
+        "output": "== compares values with type coercion. === compares values and types without coercion."
+    },
+    {
+        "instruction": "How do you find a bug in your code?",
+        "output": "Use print statements or a debugger to check values, reproduce the issue consistently, and isolate the problematic section."
+    },
+    {
+        "instruction": "What is a stack overflow error?",
+        "output": "A stack overflow occurs when too many function calls are nested, usually from infinite recursion or excessive call depth."
+    },
+    {
+        "instruction": "Explain what a race condition is.",
+        "output": "A race condition happens when multiple threads access shared data simultaneously, causing unpredictable results."
+    },
+    {
+        "instruction": "How do you optimize slow code?",
+        "output": "Profile to find bottlenecks, reduce unnecessary operations, use better algorithms, cache repeated calculations, and optimize data structures."
+    },
+    {
+        "instruction": "What is the difference between a stack and a queue?",
+        "output": "A stack is last-in-first-out (LIFO). A queue is first-in-first-out (FIFO)."
+    },
+    {
+        "instruction": "Explain what time complexity O(n log n) means.",
+        "output": "O(n log n) means the algorithm does log n work for each of n elements, typical of efficient sorting algorithms."
+    },
+    {
+        "instruction": "What is memoization?",
+        "output": "Memoization caches function results based on inputs to avoid redundant calculations when called with same arguments."
+    },
+    {
+        "instruction": "How do you prevent SQL injection?",
+        "output": "Use parameterized queries or prepared statements instead of string concatenation for SQL queries."
+    },
+    {
+        "instruction": "What is the difference between synchronous and asynchronous code?",
+        "output": "Synchronous code executes line by line, blocking until complete. Asynchronous code continues executing while waiting for operations."
+    },
+    {
+        "instruction": "Explain what a binary search does.",
+        "output": "Binary search finds an element in a sorted array by repeatedly dividing the search interval in half."
+    },
+    {
+        "instruction": "What is the time complexity of binary search?",
+        "output": "Binary search has O(log n) time complexity because it halves the search space each iteration."
+    },
+    {
+        "instruction": "How do you handle errors in code?",
+        "output": "Use try-catch blocks, validate inputs, check return values, and log errors with meaningful messages."
+    },
+    {
+        "instruction": "What is a memory leak?",
+        "output": "A memory leak occurs when allocated memory is never freed, gradually consuming available memory."
+    },
+    {
+        "instruction": "Explain what immutability means.",
+        "output": "Immutability means data cannot be changed after creation. Any modification creates a new copy instead."
+    },
+    {
+        "instruction": "What is the difference between deep copy and shallow copy?",
+        "output": "Shallow copy duplicates the top level. Deep copy recursively duplicates all nested objects."
+    },
+    {
+        "instruction": "How do you test edge cases?",
+        "output": "Test with empty inputs, null values, maximum values, minimum values, and boundary conditions."
+    },
+    {
+        "instruction": "What is a linked list?",
+        "output": "A linked list is a data structure where each element contains data and a reference to the next element."
+    },
+    {
+        "instruction": "Explain what polymorphism is.",
+        "output": "Polymorphism allows objects of different types to be treated through the same interface, with behavior varying by type."
+    },
+    {
+        "instruction": "What is encapsulation?",
+        "output": "Encapsulation bundles data and methods together and restricts direct access to internal state."
+    },
+    {
+        "instruction": "How do you improve code readability?",
+        "output": "Use meaningful names, keep functions small, add comments for complex logic, and follow consistent formatting."
+    },
+    {
+        "instruction": "What is a closure in programming?",
+        "output": "A closure is a function that captures and remembers variables from its surrounding scope."
+    },
+    {
+        "instruction": "Explain what lazy loading is.",
+        "output": "Lazy loading delays loading resources until they're needed, improving initial load time and performance."
+    },
+    {
+        "instruction": "What is the difference between abstraction and encapsulation?",
+        "output": "Abstraction hides complexity by showing only essential features. Encapsulation hides implementation details and internal state."
+    },
+    {
+        "instruction": "How do you approach solving a coding problem?",
+        "output": "Understand the problem, break it into smaller parts, write pseudocode, implement step by step, and test thoroughly."
+    },
+    {
+        "instruction": "What is divide and conquer?",
+        "output": "Divide and conquer breaks a problem into smaller subproblems, solves them independently, then combines the results."
+    },
+    {
+        "instruction": "Explain what dynamic programming is.",
+        "output": "Dynamic programming solves complex problems by breaking them into overlapping subproblems and storing results to avoid recomputation."
+    },
+    {
+        "instruction": "What is greedy algorithm approach?",
+        "output": "A greedy algorithm makes locally optimal choices at each step, hoping to find a global optimum."
+    },
+    {
+        "instruction": "How do you analyze an algorithm's efficiency?",
+        "output": "Measure time complexity (operations count) and space complexity (memory usage) as input size grows."
+    },
+    {
+        "instruction": "What is the difference between compilation and interpretation?",
+        "output": "Compilation translates entire code to machine code before execution. Interpretation executes code line by line during runtime."
+    },
+    {
+        "instruction": "Explain what a hash collision is.",
+        "output": "A hash collision occurs when different inputs produce the same hash value, requiring collision resolution strategies."
+    },
+    {
+        "instruction": "What is tail recursion?",
+        "output": "Tail recursion is when a function's recursive call is the last operation, allowing optimization into iteration."
+    },
+    {
+        "instruction": "How do you validate user input?",
+        "output": "Check data type, length, format, range, and sanitize for malicious content before processing."
+    },
+    {
+        "instruction": "What is the singleton pattern?",
+        "output": "The singleton pattern ensures a class has only one instance and provides global access to it."
+    },
+    {
+        "instruction": "Explain what inversion of control is.",
+        "output": "Inversion of control transfers control flow from application code to a framework that calls your code."
+    },
+    {
+        "instruction": "What is the observer pattern?",
+        "output": "The observer pattern lets objects subscribe to and receive notifications when another object's state changes."
+    },
+    {
+        "instruction": "How do you handle concurrent access to shared data?",
+        "output": "Use locks, semaphores, or atomic operations to synchronize access and prevent race conditions."
+    },
+    {
+        "instruction": "What is the factory pattern?",
+        "output": "The factory pattern creates objects without specifying their exact classes, using a factory method or class."
+    },
+    {
+        "instruction": "Explain what SOLID principles are.",
+        "output": "SOLID principles are five design guidelines: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion."
+    },
+    {
+        "instruction": "What is the DRY principle?",
+        "output": "DRY (Don't Repeat Yourself) means avoid code duplication by extracting common logic into reusable functions or modules."
+    },
+    {
+        "instruction": "How do you debug a performance issue?",
+        "output": "Profile the code to identify bottlenecks, measure execution time, check resource usage, and optimize critical paths."
+    },
+    {
+        "instruction": "What is a callback function?",
+        "output": "A callback function is passed as an argument to another function and executed after a specific event or operation."
+    },
+    {
+        "instruction": "Explain what a promise is in JavaScript.",
+        "output": "A promise represents a future value from an asynchronous operation, with then() for success and catch() for errors."
+    },
+    {
+        "instruction": "What is async/await?",
+        "output": "Async/await provides cleaner syntax for handling promises, making asynchronous code look synchronous."
+    },
+    {
+        "instruction": "How do you prevent deadlocks?",
+        "output": "Acquire locks in consistent order, use timeouts, avoid nested locks, or use deadlock detection algorithms."
+    },
+    {
+        "instruction": "What is a semaphore?",
+        "output": "A semaphore controls access to shared resources using a counter that limits concurrent access."
+    },
+    {
+        "instruction": "Explain what a mutex is.",
+        "output": "A mutex (mutual exclusion) ensures only one thread accesses a resource at a time by locking during access."
+    },
+    {
+        "instruction": "What is the difference between process and thread?",
+        "output": "A process is an independent program with its own memory. Threads share memory within a process."
+    },
+    {
+        "instruction": "How do you implement caching effectively?",
+        "output": "Choose appropriate cache size, use eviction policies like LRU, set expiration times, and cache expensive operations."
+    },
+    {
+        "instruction": "What is eventual consistency?",
+        "output": "Eventual consistency means data will become consistent across systems over time, but may be temporarily inconsistent."
+    },
+    {
+        "instruction": "Explain what CAP theorem states.",
+        "output": "CAP theorem states distributed systems can only guarantee two of: Consistency, Availability, Partition tolerance."
+    },
+    {
+        "instruction": "What is idempotency?",
+        "output": "Idempotency means performing an operation multiple times produces the same result as performing it once."
+    },
+    {
+        "instruction": "How do you design a scalable system?",
+        "output": "Use horizontal scaling, stateless services, caching, load balancing, database sharding, and asynchronous processing."
+    },
+    {
+        "instruction": "What is the difference between monolith and microservices?",
+        "output": "A monolith is one large application. Microservices split functionality into independent, deployable services."
+    },
+    {
+        "instruction": "Explain what circuit breaker pattern is.",
+        "output": "Circuit breaker prevents cascading failures by stopping requests to failing services and allowing them to recover."
+    },
+    {
+        "instruction": "What is database normalization?",
+        "output": "Normalization organizes database tables to reduce redundancy and improve data integrity."
+    },
+    {
+        "instruction": "How do you optimize database queries?",
+        "output": "Add indexes, avoid SELECT *, use joins efficiently, limit results, and analyze query execution plans."
+    },
+    {
+        "instruction": "What is the N+1 query problem?",
+        "output": "N+1 happens when fetching N items triggers N additional queries. Use eager loading or joins to fix it."
+    },
+    {
+        "instruction": "Explain what eventual consistency means in distributed systems.",
+        "output": "Eventual consistency allows temporary inconsistencies but guarantees all replicas will converge to the same state."
+    },
+    {
+        "instruction": "What is sharding?",
+        "output": "Sharding splits data across multiple databases to distribute load and improve performance."
+    },
+    {
+        "instruction": "How do you handle backward compatibility?",
+        "output": "Version APIs, use feature flags, maintain old interfaces temporarily, and test with legacy clients."
+    },
+    {
+        "instruction": "What is the strangler fig pattern?",
+        "output": "Strangler fig gradually replaces legacy systems by routing new features to new code while maintaining old functionality."
+    },
+    {
+        "instruction": "Explain what blue-green deployment is.",
+        "output": "Blue-green deployment runs two identical environments, switching traffic between them for zero-downtime updates."
+    },
+    {
+        "instruction": "What is canary deployment?",
+        "output": "Canary deployment releases updates to a small subset of users first to test before full rollout."
+    },
+    {
+        "instruction": "How do you implement retry logic?",
+        "output": "Use exponential backoff, limit retry attempts, check if operation is idempotent, and handle different error types."
+    },
+    {
+        "instruction": "What is rate limiting?",
+        "output": "Rate limiting restricts how many requests a client can make in a time period to prevent abuse."
+    },
+    {
+        "instruction": "Explain what backpressure is.",
+        "output": "Backpressure controls flow when consumers can't keep up with producers, preventing system overload."
+    },
+    {
+        "instruction": "What is a bloom filter?",
+        "output": "A bloom filter is a space-efficient probabilistic data structure that tests whether an element might be in a set."
+    },
+    {
+        "instruction": "How do you implement autocomplete efficiently?",
+        "output": "Use a trie data structure for prefix matching, cache common queries, and limit result count."
+    },
+    {
+        "instruction": "What is the difference between horizontal and vertical scaling?",
+        "output": "Horizontal scaling adds more machines. Vertical scaling adds more resources to existing machines."
+    },
+    {
+        "instruction": "Explain what eventual consistency trade-offs are.",
+        "output": "Eventual consistency provides better availability and performance but requires handling temporary inconsistencies."
+    },
+    {
+        "instruction": "What is the two-phase commit protocol?",
+        "output": "Two-phase commit ensures distributed transactions complete on all nodes or none, maintaining consistency."
+    },
+    {
+        "instruction": "How do you debug a distributed system?",
+        "output": "Use distributed tracing, centralized logging, correlation IDs, and monitor system metrics across services."
+    },
+    {
+        "instruction": "What is the difference between authentication and authorization?",
+        "output": "Authentication verifies who you are. Authorization determines what you're allowed to do."
+    },
+    {
+        "instruction": "Explain what JWT is.",
+        "output": "JWT (JSON Web Token) is a compact token format for securely transmitting information between parties as JSON."
+    },
+    {
+        "instruction": "What is CORS?",
+        "output": "CORS (Cross-Origin Resource Sharing) controls which domains can access resources from a different origin."
+    },
+    {
+        "instruction": "How do you secure an API?",
+        "output": "Use HTTPS, authentication tokens, rate limiting, input validation, and proper authorization checks."
+    },
+    {
+        "instruction": "What is the principle of least privilege?",
+        "output": "Least privilege gives users and systems only the minimum permissions needed to perform their tasks."
+    },
+    {
+        "instruction": "Explain what XSS attack is.",
+        "output": "XSS (Cross-Site Scripting) injects malicious scripts into web pages viewed by other users."
+    },
+    {
+        "instruction": "What is CSRF?",
+        "output": "CSRF (Cross-Site Request Forgery) tricks users into executing unwanted actions on authenticated sites."
+    },
+    {
+        "instruction": "How do you prevent XSS attacks?",
+        "output": "Sanitize user input, encode output, use Content Security Policy, and validate data on server side."
+    },
+    {
+        "instruction": "What is input sanitization?",
+        "output": "Input sanitization removes or encodes dangerous characters from user input to prevent injection attacks."
+    },
+    {
+        "instruction": "Explain what a man-in-the-middle attack is.",
+        "output": "MITM attack intercepts communication between two parties to eavesdrop or modify data without detection."
+    },
+    {
+        "instruction": "What is the purpose of salting passwords?",
+        "output": "Salting adds random data to passwords before hashing to prevent rainbow table attacks."
+    },
+    {
+        "instruction": "How do you implement logging properly?",
+        "output": "Log at appropriate levels, include context, avoid sensitive data, use structured logging, and centralize logs."
+    },
+    {
+        "instruction": "What should you never log?",
+        "output": "Never log passwords, API keys, credit card numbers, personal identifiable information, or session tokens."
+    },
+    {
+        "instruction": "Explain what observability means.",
+        "output": "Observability lets you understand system internal state from external outputs using metrics, logs, and traces."
+    },
+    {
+        "instruction": "What are the three pillars of observability?",
+        "output": "The three pillars are metrics (numbers over time), logs (discrete events), and traces (request flow)."
+    },
+    {
+        "instruction": "How do you monitor system health?",
+        "output": "Track key metrics like latency, error rate, throughput, resource usage, and set up alerts for anomalies."
+    },
+    {
+        "instruction": "What is an SLA?",
+        "output": "SLA (Service Level Agreement) defines expected service availability and performance commitments."
+    },
+    {
+        "instruction": "Explain what graceful degradation is.",
+        "output": "Graceful degradation maintains core functionality when parts of a system fail, reducing features instead of crashing."
+    },
+    {
+        "instruction": "What is feature flagging?",
+        "output": "Feature flags toggle features on/off without deploying code, enabling testing and gradual rollouts."
+    },
+    {
+        "instruction": "How do you handle schema migrations?",
+        "output": "Version migrations, test thoroughly, make changes backward compatible, and implement in small incremental steps."
+    },
+    {
+        "instruction": "What is code coverage?",
+        "output": "Code coverage measures the percentage of code executed by tests, helping identify untested areas."
+    },
+    {
+        "instruction": "Explain what integration testing is.",
+        "output": "Integration testing verifies that different modules or services work correctly together."
+    },
+    {
+        "instruction": "What is the difference between unit and integration tests?",
+        "output": "Unit tests verify individual components in isolation. Integration tests verify components working together."
+    },
+    {
+        "instruction": "How do you write testable code?",
+        "output": "Keep functions small and focused, minimize dependencies, use dependency injection, and avoid global state."
+    },
+    {
+        "instruction": "What is test-driven development?",
+        "output": "TDD writes tests before code, ensuring requirements are clear and code is testable from the start."
+    },
+    {
+        "instruction": "Explain what mocking is in testing.",
+        "output": "Mocking replaces real dependencies with fake implementations to isolate the code being tested."
+    },
+    {
+        "instruction": "What is the arrange-act-assert pattern?",
+        "output": "AAA pattern organizes tests: Arrange setup, Act execute code, Assert verify results."
+    },
+    {
+        "instruction": "How do you test asynchronous code?",
+        "output": "Use async test functions, await promises, use timeouts carefully, and handle both success and error cases."
+    },
+    {
+        "instruction": "What is continuous deployment?",
+        "output": "Continuous deployment automatically deploys all code changes that pass tests to production."
+    },
+    {
+        "instruction": "Explain what infrastructure as code is.",
+        "output": "Infrastructure as code manages infrastructure through machine-readable files rather than manual configuration."
+    },
+    {
+        "instruction": "What is the difference between CI and CD?",
+        "output": "CI (Continuous Integration) merges code frequently and runs tests. CD (Continuous Deployment) automatically deploys changes."
+    },
+    {
+        "instruction": "How do you implement proper error handling?",
+        "output": "Catch specific exceptions, provide meaningful messages, log errors, clean up resources, and don't expose internal details."
+    },
+    {
+        "instruction": "What is the fail-fast principle?",
+        "output": "Fail-fast detects and reports errors immediately rather than continuing with invalid state."
+    },
+    {
+        "instruction": "Explain what defensive programming is.",
+        "output": "Defensive programming anticipates and handles unexpected inputs, states, and errors proactively."
+    },
+    {
+        "instruction": "What is the difference between error and exception?",
+        "output": "Errors are serious problems that shouldn't be caught. Exceptions are recoverable conditions that can be handled."
+    },
+    {
+        "instruction": "How do you prioritize technical debt?",
+        "output": "Assess impact on velocity, maintainability, and risk. Address high-impact debt that blocks important features."
+    },
+    {
+        "instruction": "What makes code maintainable?",
+        "output": "Clear naming, consistent style, good documentation, modular design, comprehensive tests, and low complexity."
+    },
+    {
+        "instruction": "Explain what cyclomatic complexity is.",
+        "output": "Cyclomatic complexity measures the number of independent paths through code, indicating its complexity."
+    },
+    {
+        "instruction": "What is the single responsibility principle?",
+        "output": "Each class or function should have one reason to change, focusing on a single concern."
+    },
+    {
+        "instruction": "How do you conduct code reviews effectively?",
+        "output": "Check logic and correctness first, suggest improvements kindly, focus on significant issues, and explain reasoning."
+    },
+    {
+        "instruction": "What should you look for in code reviews?",
+        "output": "Correctness, readability, performance issues, security vulnerabilities, test coverage, and design consistency."
+    },
+    {
+        "instruction": "Explain what rubber duck debugging is.",
+        "output": "Rubber duck debugging explains code line-by-line to an object, often revealing the problem through articulation."
+    },
+    {
+        "instruction": "What is pair programming?",
+        "output": "Two developers work together: one writes code (driver) while the other reviews and guides (navigator)."
+    },
+    {
+        "instruction": "How do you estimate development time?",
+        "output": "Break tasks into smaller pieces, consider complexity and unknowns, add buffer for testing, and use historical data."
+    },
+    {
+        "instruction": "What is the Pareto principle in software?",
+        "output": "80% of effects come from 20% of causes - focus on the 20% that delivers the most value."
+    },
+    {
+        "instruction": "Explain what premature optimization means.",
+        "output": "Premature optimization wastes time optimizing before identifying actual bottlenecks. Profile first, then optimize."
+    },
+    {
+        "instruction": "What is the YAGNI principle?",
+        "output": "YAGNI (You Aren't Gonna Need It) means don't add functionality until it's actually needed."
+    },
+    {
+        "instruction": "How do you balance speed and quality in development?",
+        "output": "Define minimum viable quality, automate testing, focus on high-impact areas, and refactor incrementally."
     }
 ]
