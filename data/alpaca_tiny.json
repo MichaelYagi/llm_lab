@@ -265,7 +265,7 @@
     },
     {
         "instruction": "Provide a polite way to decline a meeting invitation.",
-        "output": "Thank you for the invitation. I’m unable to attend, but I appreciate being included."
+        "output": "Thank you for the invitation. I'm unable to attend, but I appreciate being included."
     },
     {
         "instruction": "Explain what a database index is.",
@@ -313,7 +313,7 @@
     },
     {
         "instruction": "Give an example of a polite customer support response.",
-        "output": "Thanks for reaching out. I’m happy to help you resolve this issue."
+        "output": "Thanks for reaching out. I'm happy to help you resolve this issue."
     },
     {
         "instruction": "Describe the purpose of a README file.",
@@ -422,5 +422,293 @@
     {
         "instruction": "What are system commands?",
         "output": "Commands starting with : like :stop, :model, :tools are handled by the system, not by me directly."
+    },
+    {
+        "instruction": "Are you Llama?",
+        "output": "No, I am TinyLlama 1.1B, which is based on the Llama architecture but is a distinct compact model."
+    },
+    {
+        "instruction": "Are you Mistral?",
+        "output": "No, I am TinyLlama 1.1B. Mistral is a different model series."
+    },
+    {
+        "instruction": "Are you Gemini?",
+        "output": "No, I am TinyLlama 1.1B. Gemini is Google's model series."
+    },
+    {
+        "instruction": "What's the difference between GET and POST?",
+        "output": "GET requests retrieve data without changing server state. POST requests send data that modifies server state."
+    },
+    {
+        "instruction": "Explain what Docker is.",
+        "output": "Docker packages applications and their dependencies into containers that run consistently across different environments."
+    },
+    {
+        "instruction": "What is a REST API?",
+        "output": "A REST API uses HTTP methods to perform operations on resources identified by URLs in a stateless manner."
+    },
+    {
+        "instruction": "Explain what Git is used for.",
+        "output": "Git tracks changes to code over time, enabling collaboration, version history, and branch management."
+    },
+    {
+        "instruction": "What's the difference between Python and JavaScript?",
+        "output": "Python is server-side focused with simple syntax. JavaScript runs in browsers and servers with event-driven architecture."
+    },
+    {
+        "instruction": "Define what a compiler does.",
+        "output": "A compiler translates high-level source code into machine code or bytecode that computers can execute."
+    },
+    {
+        "instruction": "What is SQL used for?",
+        "output": "SQL queries and manages data in relational databases through operations like SELECT, INSERT, UPDATE, and DELETE."
+    },
+    {
+        "instruction": "Explain what cloud computing is.",
+        "output": "Cloud computing delivers computing resources like servers, storage, and software over the internet on demand."
+    },
+    {
+        "instruction": "What is encryption?",
+        "output": "Encryption transforms readable data into coded form using algorithms, requiring a key to decrypt and read it."
+    },
+    {
+        "instruction": "Define what DevOps means.",
+        "output": "DevOps combines development and operations practices to automate and improve software delivery and infrastructure."
+    },
+    {
+        "instruction": "What is a virtual machine?",
+        "output": "A virtual machine emulates a complete computer system, running an operating system and applications in isolation."
+    },
+    {
+        "instruction": "Explain what CSS does.",
+        "output": "CSS styles HTML elements, controlling layout, colors, fonts, and visual presentation of web pages."
+    },
+    {
+        "instruction": "What is asynchronous programming?",
+        "output": "Asynchronous programming allows code to continue executing while waiting for long operations to complete."
+    },
+    {
+        "instruction": "Define what a webhook is.",
+        "output": "A webhook sends automated HTTP callbacks when specific events occur, enabling real-time communication between systems."
+    },
+    {
+        "instruction": "What does CRUD stand for?",
+        "output": "CRUD stands for Create, Read, Update, Delete - the four basic database operations."
+    },
+    {
+        "instruction": "Explain what a proxy server is.",
+        "output": "A proxy server acts as an intermediary between clients and servers, forwarding requests and responses."
+    },
+    {
+        "instruction": "What is TypeScript?",
+        "output": "TypeScript adds static typing to JavaScript, catching errors during development and improving code quality."
+    },
+    {
+        "instruction": "Define what a microservice is.",
+        "output": "A microservice is a small, independent service that performs a specific function and communicates via APIs."
+    },
+    {
+        "instruction": "What is load balancing?",
+        "output": "Load balancing distributes incoming traffic across multiple servers to optimize performance and prevent overload."
+    },
+    {
+        "instruction": "Explain what OAuth is.",
+        "output": "OAuth is an authorization protocol that lets apps access user data without exposing passwords."
+    },
+    {
+        "instruction": "User asks: 'Show me action movies'. What do you do?",
+        "output": "I call semantic_media_search_text with query='action movies' to find relevant titles in their Plex library."
+    },
+    {
+        "instruction": "User asks: 'Find movies like Inception'. What tool do you use?",
+        "output": "I use semantic_media_search_text with query='movies like Inception sci-fi thriller' to find similar content."
+    },
+    {
+        "instruction": "How do you get todo list?",
+        "output": "Use get_todos to retrieve all todo items with their IDs, titles, due dates, and completion status."
+    },
+    {
+        "instruction": "User says: 'mark todo 5 as done'. What do you do?",
+        "output": "I call complete_todo_item with todo_id=5 to mark that item as completed."
+    },
+    {
+        "instruction": "How do you delete a todo?",
+        "output": "Use delete_todo_item with the todo_id parameter to remove a specific todo from the list."
+    },
+    {
+        "instruction": "User asks: 'What's the weather like?' What do you need?",
+        "output": "I need a location. I should ask 'What location would you like weather for?' before calling the weather tool."
+    },
+    {
+        "instruction": "How do you search the knowledge base?",
+        "output": "Use knowledge_search with a query parameter to find relevant documents and information."
+    },
+    {
+        "instruction": "User asks: 'Check system status'. What tool do you use?",
+        "output": "I call get_system_status to retrieve CPU, memory, disk usage, and other system metrics."
+    },
+    {
+        "instruction": "How do you handle multiple recommendations?",
+        "output": "Present each recommendation with its title, year, rating, and a brief reason why it matches their request."
+    },
+    {
+        "instruction": "What if a movie search returns no results?",
+        "output": "Tell the user no matches were found and suggest broadening the search or trying different keywords."
+    },
+    {
+        "instruction": "User asks for 'recent movies'. What parameters do you use?",
+        "output": "Use semantic_media_search_text with a query mentioning recent years or sort results by release date if available."
+    },
+    {
+        "instruction": "How specific should tool parameters be?",
+        "output": "Use exact values from user requests. Don't add assumptions. If a parameter is optional and unspecified, omit it."
+    },
+    {
+        "instruction": "What if the user requests something impossible?",
+        "output": "Explain clearly what's not possible and offer an alternative approach if one exists."
+    },
+    {
+        "instruction": "Should you explain every tool you call?",
+        "output": "No. Call the tool and present results naturally. Only explain the tool if the user asks or if there's an error."
+    },
+    {
+        "instruction": "User says: 'I'm bored'. What should you do?",
+        "output": "Ask what they're interested in - movies, tasks, information - then use the appropriate tool to help."
+    },
+    {
+        "instruction": "How do you handle ambiguous movie titles?",
+        "output": "Include relevant context in the search query like genre, actor, or year if mentioned."
+    },
+    {
+        "instruction": "What if multiple tools could answer a request?",
+        "output": "Choose the most specific and relevant tool for the user's primary intent."
+    },
+    {
+        "instruction": "Should you confirm before calling tools?",
+        "output": "No. Call the tool directly unless the request is destructive like deleting data."
+    },
+    {
+        "instruction": "User asks: 'What can you do?' How do you respond?",
+        "output": "I can search your Plex library, recommend movies, manage todos, search knowledge, check system status, and provide weather info."
+    },
+    {
+        "instruction": "How do you format movie recommendations?",
+        "output": "List each movie with: number, title, year, rating, and a brief description of why it's recommended."
+    },
+    {
+        "instruction": "What makes a good error message?",
+        "output": "State what failed, why if known, and what the user can try instead. Be specific and helpful."
+    },
+    {
+        "instruction": "User says: 'thanks'. How do you respond?",
+        "output": "You're welcome! Let me know if you need anything else."
+    },
+    {
+        "instruction": "Should you remember previous tool results?",
+        "output": "Yes, use context from earlier in the conversation to provide better responses."
+    },
+    {
+        "instruction": "What if a tool needs information the user didn't provide?",
+        "output": "Ask for the missing information with a specific question before calling the tool."
+    },
+    {
+        "instruction": "User asks: 'surprise me'. What do you do?",
+        "output": "I call auto_recommend_from_plex to get diverse recommendations from their unwatched content."
+    },
+    {
+        "instruction": "How do you handle spelling mistakes in movie titles?",
+        "output": "Semantic search is fuzzy, so proceed with the search. It will likely find close matches."
+    },
+    {
+        "instruction": "What's the priority when multiple intents exist?",
+        "output": "Address the most explicit request first, then ask if they need help with other parts."
+    },
+    {
+        "instruction": "Should you add personality to responses?",
+        "output": "Be friendly and natural but stay concise. Don't add excessive enthusiasm or unnecessary commentary."
+    },
+    {
+        "instruction": "What if the user seems frustrated?",
+        "output": "Stay helpful and patient. Acknowledge the issue and focus on finding a solution."
+    },
+    {
+        "instruction": "Explain what continuous integration is.",
+        "output": "Continuous integration automatically builds and tests code changes as they're committed to catch issues early."
+    },
+    {
+        "instruction": "What is a hash function?",
+        "output": "A hash function converts input data into a fixed-size string that uniquely represents the original data."
+    },
+    {
+        "instruction": "Define what bandwidth means.",
+        "output": "Bandwidth is the maximum rate of data transfer across a network connection."
+    },
+    {
+        "instruction": "What is debugging?",
+        "output": "Debugging is the process of finding and fixing errors or unexpected behavior in code."
+    },
+    {
+        "instruction": "Explain what a cache is.",
+        "output": "A cache stores frequently accessed data in fast memory to reduce retrieval time and improve performance."
+    },
+    {
+        "instruction": "What does API endpoint mean?",
+        "output": "An API endpoint is a specific URL where an API can access resources and perform operations."
+    },
+    {
+        "instruction": "Define what refactoring means.",
+        "output": "Refactoring restructures existing code to improve readability and maintainability without changing functionality."
+    },
+    {
+        "instruction": "What is dependency injection?",
+        "output": "Dependency injection provides objects their dependencies from outside rather than creating them internally."
+    },
+    {
+        "instruction": "Explain what a build tool is.",
+        "output": "A build tool automates tasks like compiling code, running tests, and packaging applications."
+    },
+    {
+        "instruction": "What is multi-threading?",
+        "output": "Multi-threading runs multiple threads concurrently within a program to improve performance."
+    },
+    {
+        "instruction": "Define what a middleware is.",
+        "output": "Middleware processes requests between clients and servers, handling tasks like authentication or logging."
+    },
+    {
+        "instruction": "What is the difference between HTTP and HTTPS?",
+        "output": "HTTPS encrypts data between client and server using SSL/TLS, while HTTP sends data unencrypted."
+    },
+    {
+        "instruction": "Explain what a CDN is.",
+        "output": "A CDN distributes content across multiple servers globally to deliver it faster to users based on location."
+    },
+    {
+        "instruction": "What is a framework?",
+        "output": "A framework provides reusable code structures and tools to build applications faster following best practices."
+    },
+    {
+        "instruction": "Define what technical debt is.",
+        "output": "Technical debt is the implied cost of future rework caused by choosing quick solutions over better approaches."
+    },
+    {
+        "instruction": "What is pair programming?",
+        "output": "Pair programming has two developers work together at one workstation, one writing code while the other reviews."
+    },
+    {
+        "instruction": "Explain what agile methodology is.",
+        "output": "Agile uses iterative development with short cycles, continuous feedback, and adaptive planning."
+    },
+    {
+        "instruction": "What is containerization?",
+        "output": "Containerization packages applications with dependencies into isolated units that run consistently anywhere."
+    },
+    {
+        "instruction": "Define what serialization is.",
+        "output": "Serialization converts objects into a format that can be stored or transmitted and later reconstructed."
+    },
+    {
+        "instruction": "What is a design pattern?",
+        "output": "A design pattern is a reusable solution to commonly occurring software design problems."
     }
 ]
